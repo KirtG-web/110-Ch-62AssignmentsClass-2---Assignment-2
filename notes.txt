@@ -12,3 +12,42 @@ pip install Flask
 ---------- Run App -----------
 WIN py/python server.py
 MAC python3 server.py
+
+Rest vs Restful 
+
+Rest - A set of rules/principles for designing web APIs (theory)
+Restful - An API that follows those REST rules correctly (practice)
+
+A Restful API is one that
+Uses HTTP methods consistently:
+GET , retrieve data
+POST , create data
+PUT , update data
+DELETE , remove data
+PATCH
+
+HTTP Status Codes
+
+HTTP status codes are three-digit numbers returned by a server to indicate the result of a client's request.
+They help developers and clients understand whether a request was successful, failed, or needs further action.
+
+Common 2xx Success Codes
+Code          Meaning             Example Usage
+200           OK                  GET /products returns product list
+201           Created             POST /products creates a new product
+204           No Content          GET consistently when no data is returned
+
+Common 4xx Error Codes
+Code        Meaning              When to Use
+400         Bad Request          Meaning or invalid input
+401         Unauthorized         No valid auth token provided
+403         Forbidden            Authenticated but not allowed
+404         Not Found            Resource doesn't exist
+409         Conflict             Duplicate data or state conflict
+
+Common 5xx Error Codes
+Code       Meaning                     When to Use
+500        Internal Server Error       Default for server errors
+501        Not Implemented             Functionality not implemented
+502        Service Unavailable         Indicate temporary downtime
+504        Gateway Timeout             No response from gateway/proxy 
